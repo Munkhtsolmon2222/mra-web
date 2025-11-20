@@ -1,0 +1,1069 @@
+AWSTATS DATA FILE 8.0 (build 20240604)
+# If you remove this file, all statistics for date 202509 will be lost/reset.
+# Last config file used to build this data file was /home/mra/tmp/awstats/awstats.mongolianrestaurants.mn.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2086                
+POS_TIME 2764                
+POS_VISITOR 22695               
+POS_DAY 24970               
+POS_DOMAIN 3489                
+POS_LOGIN 3913                
+POS_ROBOT 4068                
+POS_WORMS 4632                
+POS_EMAILSENDER 4763                
+POS_EMAILRECEIVER 4906                
+POS_SESSION 25237               
+POS_FILESIZE 25713               
+POS_REQUESTTIME 25837               
+POS_SIDER 25394               
+POS_FILETYPES 5041                
+POS_DOWNLOADS 5217                
+POS_OS 5265                
+POS_BROWSER 5484                
+POS_SCREENSIZE 6365                
+POS_UNKNOWNREFERER 6439                
+POS_UNKNOWNREFERERBROWSER 6881                
+POS_ORIGIN 7036                
+POS_SEREFERRALS 7171                
+POS_PAGEREFS 7334                
+POS_SEARCHWORDS 7522                
+POS_KEYWORDS 7674                
+POS_MISC 2428                
+POS_ERRORS 7733                
+POS_CLUSTER 3769                
+POS_SIDER_404 7823                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20251001000255 20 4429 10845017521583
+FirstTime 20250922195923
+LastTime 20250930185001
+LastUpdate 20251001182230 20 0 19 0 0
+TotalVisits 46                  
+TotalUnique 44                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 63                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+DirectorSupport 0 0 0
+TotalMisc 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+PDFSupport 0 0 0
+JavascriptDisabled 0 0 0
+QuickTimeSupport 0 0 0
+AddToFavourites 0 0 0
+JavaEnabled 0 0 0
+FlashSupport 0 0 0
+RealPlayerSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 3 3 95646 9 42 1468498
+1 3 3 95646 20 23 16
+2 11 34 2675403 5 27 735936
+3 0 0 0 3 20 1545094
+4 5 6 162766 7 16 571022
+5 3 3 95646 2 8 223679
+6 0 0 0 2 4 66063
+7 7 38 2843451 182 189 88590
+8 1 2 35238 3 8 45383
+9 25 25 867970 3 11 78409
+10 1 1 31882 1 4 13485
+11 4 4 127528 16 31 653455
+12 0 0 0 107 109 33210
+13 2 2 63764 3 8 97945
+14 2 18 781691 2 4 31882
+15 0 0 0 36 39 31930
+16 2 2 63764 7 21 1283846
+17 4 5 130884 220 221 187080
+18 1 8 373918 186 190 674689
+19 2 2 63764 140 144 68544
+20 0 0 0 1 5 1063517
+21 1 9 377274 169 173 67231
+22 9 86 7546948 16 24 218621
+23 4 9 219647 103 108 419555
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 15
+us 39 173 13458454
+ca 14 28 1165880
+ru 11 16 442821
+eg 10 10 354280
+in 3 3 95646
+cn 3 3 95646
+dk 2 18 781691
+nl 2 2 63764
+gr 1 1 31882
+cl 1 1 31882
+no 1 1 31882
+se 1 1 31882
+it 1 1 31882
+de 1 1 31882
+be 0 1 3356
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 12
+bingbot/ 56 5683832 20250930213529 0
+Googlebot/ 52 2341858 20250929192104 0
+AhrefsBot/ 23 1002885 20250928085853 0
+Go\-http\-client/ 9 296975 20250926160214 0
+no_user_agent 6 18666 20250923212506 0
+MJ12bot/ 6 202581 20250929090325 0
+crawl 2 26970 20250928224625 0
+360Spider 2 63764 20250928192558 0
+curl 1 0 20250923141325 0
+Googlebot\-Image/ 1 3356 20250923190905 0
+DotBot/ 1 13485 20250930081010 0
+yandex 1 3356 20250923094037 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 6
+js 48 1292211 0 0
+html 84 2763418 0 0
+ttf 6 151680 0 0
+css 76 4182649 0 0
+png 23 3854802 0 0
+jpg 23 4408070 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 11
+macosx 1 1
+win7 10 4
+Unknown 47 16
+androidoreo 1 1
+androidnougat 1 1
+macosx15 7 5
+android10 1 1
+win10 125 49
+linux 60 5
+androidkitkat 4 4
+ios_iphone 3 3
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 40
+Unknown 7 2
+chrome83.0.4103.61 7 1
+opera89.0.4447.51 9 9
+chrome134.0.0.0 16 14
+chrome79.0.3945.79 25 2
+mozilla 39 13
+chrome95.0.4638.69 2 2
+safari17.3.1 2 2
+chrome60.0.3112.107 1 1
+chrome112.0.5615.138 1 1
+chrome91.0.4472.114 1 1
+chrome117.0.5938.132 25 2
+firefox137.0 1 0
+chrome129.0.0.0 2 2
+netscape5.0 1 1
+chrome125.0.6422.60 25 2
+chrome90.0.4430.85 1 1
+safari18.4 1 1
+chrome127.0.0.0 18 2
+chrome123.0.6312.4 1 0
+firefox122.0 2 2
+chrome79.0.3945.130 4 4
+chrome116.0.5845.96 1 1
+chrome78.0.3904.108 3 3
+chrome66.0.3359.117 1 1
+chrome91.0.4472.124 2 2
+safari10.0 1 1
+firefox113.0 1 1
+chrome80.0.3987.162 1 1
+chrome124.0.0.0 1 0
+chrome106.0.0.0 3 1
+chrome114.0.0.0 1 1
+chrome79.0.3945.88 3 3
+safari18.3.1 1 0
+android 4 4
+chrome133.0.0.0 1 0
+chrome139.0.0.0 35 3
+chrome135.0.0.0 7 0
+chrome101.0.4951.41 1 1
+chrome60.0.3112.113 2 2
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 6
+python-requests/2.26.0 20250925001142
+python-httpx/0.28.1 20250924230321
+Mozilla/5.0_(compatible;_CensysInspect/1.1;__https://about.censys.io/) 20250926212402
+Mozilla/5.0_zgrab/0.x 20250927041600
+Mozilla/5.0_(compatible;_Dataprovider.com) 20250925021236
+Mozilla/5.0_(compatible;_InternetMeasurement/1.0;__https://internet-measurement.com/) 20250925045740
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 2
+python-requests/2.26.0 20250925001142
+python-httpx/0.28.1 20250924230321
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 57 81
+From1 1 1
+From2 1 1
+From3 0 1
+From4 31 176
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+www_google_com 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+http://mail.mongolianrestaurants.mn 0 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 1
+404 1262 9952
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 659
+/ioxi2.php 1 -
+http://mongolianrestaurants.mn:80/feed/ 1 -
+/jlex3.php 1 -
+/shop/ 3 -
+/wp-includes/SimplePie/Content/ 2 -
+/moon.php 4 -
+/wp-includes/404.php 1 -
+/zeal.php 1 -
+/backup.php 1 -
+/config/cli_bootstrap.php 1 -
+/667.php 2 -
+/makeasmtp.php 7 -
+/wp-includes/block-bindings/ 1 -
+/cgi-bin/file.php 1 -
+/wp-includes/assets/ 3 -
+/whv.php 1 -
+/wp-admin/images/ 2 -
+/ae.php 1 -
+/wp-xm.php 1 -
+/simple.php 4 -
+/num.php 2 -
+/wp-includes/css/dist/widgets/about.php 1 -
+/fm.php 1 -
+/y.php 4 -
+/wek.php 1 -
+/aa.php 6 -
+/content.php 4 -
+/file17.php 2 -
+/gg.php 1 -
+/wp-includes/pomo/ 2 -
+/zc-749.php 1 -
+/gecko.php 4 -
+/file.php 9 -
+/wp-includes/Requests/Utility/ 2 -
+/blog.php 1 -
+/as.php 3 -
+/mnkalo.php 1 -
+/fwe.php 1 -
+/humans.txt 1 -
+/css.php 3 -
+/as4AaPasd.php 1 -
+/f35.php 2 -
+/wp-admin/css/colors/blue/index.php 6 -
+/wp-includes/style-engine/about.php 1 -
+/wp-includes/wlwmanifest.xml 1 -
+http://mongolianrestaurants.mn:80/wordpress/wp-includes/wlwmanifest.xml 1 -
+/ff.php 1 -
+/2021/wp-includes/wlwmanifest.xml 1 -
+/6erg.php 1 -
+/rsnu.php 1 -
+/wp-content/uploads/index.php 3 -
+/mlex.php 1 -
+/wp-includes/Text/autoload_classmap.php 1 -
+/sxo.php 1 -
+/jlex.php 1 -
+http://mongolianrestaurants.mn:80/cms/wp-includes/wlwmanifest.xml 1 -
+/alf4.php 1 -
+/naxc.php 1 -
+/wp-content/1.php 1 -
+/hosting.json 1 -
+/config/database.config.php 1 -
+/wp-includes/images/wlw/ 2 -
+/wp-includes/fonts/ 3 -
+/NewFile.php 2 -
+/wp-admin/js/autoload_classmap.php 1 -
+/js.php 1 -
+/plugins.php 1 -
+/0.php 1 -
+/e.php 1 -
+/wp-content/mu-plugins-old/ 3 -
+/zasd.php 1 -
+/wp-api.php 5 -
+/xpass.php 1 -
+/wp-includes/Text/ 2 -
+/akk.php 1 -
+/miansha.php 1 -
+/testas.php 1 -
+/cc.php 1 -
+/13.php 2 -
+/themes.php 2 -
+http://mongolianrestaurants.mn:80/2021/wp-includes/wlwmanifest.xml 1 -
+/z.php 1 -
+http://mongolianrestaurants.mn:80/wp1/wp-includes/wlwmanifest.xml 1 -
+/wp-includes/rest-api/fields/ 3 -
+/h8h9.php 1 -
+/444.php 1 -
+/.vscode/sftp.json 1 -
+/modules/ 2 -
+/10266.php 1 -
+/admin/index.php 1 -
+/wp-includes/IXR/admin.php 1 -
+/wp-content/index.php 8 -
+/wp-content/akp.php 1 -
+/jga.php 1 -
+/wp2/wp-includes/wlwmanifest.xml 1 -
+/tox.php 1 -
+/wp-includes/certificates/ 3 -
+/zc-903.php 1 -
+/security.txt 1 -
+/mah.php 1 -
+/sxb.php 1 -
+/wp-includes/widgets/ 3 -
+/wp-admin/admin.php 1 -
+/iov.php 1 -
+/wp-content/themes/classic/inc/ 2 -
+/hb02ugyh.php 1 -
+/note.php 1 -
+/lol.php 1 -
+/admin/.env 1 -
+/components/ 2 -
+/config/cache.php 1 -
+/vxrl.php 2 -
+/crm/.env 1 -
+http://mongolianrestaurants.mn:80/2020/wp-includes/wlwmanifest.xml 1 -
+/login/index.php 1 -
+/rss.php 1 -
+/p.php 3 -
+/mws.php 1 -
+/we2.php 1 -
+/shared/.env 1 -
+/mo.php 1 -
+/index.php/phpinfo 1 -
+/plugins/ 2 -
+/sitemap.txt 2 -
+/shorw.php 1 -
+/.env-example 1 -
+/wp-content/about.php 1 -
+/wp-admin/css/colors/midnight/wp-login.php 1 -
+/wp-gr.php 1 -
+/class-t.api.php 1 -
+/mbg.php 1 -
+/sts.php 4 -
+/wp-content/plugins/aafr/uploader.php 1 -
+/.well-known/pki-validation/about.php 1 -
+/ma1.php 1 -
+/noe.php 1 -
+/ini.php 1 -
+/.alf.php 1 -
+/wp-content/plugins/index.php 1 -
+/aaaa.php 1 -
+/404.php 1 -
+/.well-known/acme-challenge/muse.php 1 -
+/10.php 3 -
+/wp-admin/maint/ 3 -
+/shell.php 2 -
+/wp-json 1 -
+/.lajuju.php 1 -
+/lc.php 1 -
+/sitemap.xml.gz 1 -
+/phpinfo 2 -
+/class.php 1 -
+/fw.php 3 -
+/up.php 1 -
+/Public/ 2 -
+/wp-content/plugins/WordPressCore/cong.php 1 -
+/new.php 3 -
+/wp-content/plugins/wp-conflg.php 1 -
+/shop/wp-includes/wlwmanifest.xml 2 -
+/api/.env 2 -
+/application/.env 1 -
+/wp-admin/index.php 1 -
+/flower.php 7 -
+/.bod/.ll/ss.php 1 -
+/.aws/credentials 1 -
+/a2.php 1 -
+/wp-admin/css/colors/ 2 -
+/aws.yml 1 -
+/page5.html.zip 1 -
+/radio.php 2 -
+/wp-conflg.php 1 -
+/w.php 5 -
+/karak.php 2 -
+/admi.php 1 -
+/fi2.php 1 -
+/shell1.php 1 -
+/wp-includes/blocks/ 2 -
+/admin/uploads/ 3 -
+/classsmtps.php 3 -
+/wp-includes/IXR/autoload_classmap.php 5 -
+/akc.php 6 -
+/sitemaps.xml 2 -
+/wo.php 1 -
+http://mongolianrestaurants.mn:80/site/wp-includes/wlwmanifest.xml 1 -
+/algox.php 1 -
+/nc4.php 7 -
+/ht.php 1 -
+/wp-includes/images/ 3 -
+/v2.php 2 -
+/wordpress/wp-includes/wlwmanifest.xml 2 -
+/wp-includes/Requests/Auth/ 2 -
+/wp-content/themes/about.php 3 -
+/wp-includes/sodium_compat/ 3 -
+/wp-includes/block-patterns/ 2 -
+/11.php 1 -
+/manager.php 2 -
+/mtrje.php 1 -
+/.env.project 1 -
+/des.php 1 -
+/autoload_classmap.php 8 -
+/goods.php 5 -
+/_profiler/phpinfo 1 -
+/hn.php 1 -
+/wp1/wp-includes/wlwmanifest.xml 2 -
+/wp-admin/autoload_classmap.php 1 -
+/wp-includes/php-compat/ 2 -
+/cache.php 6 -
+/Site/ 2 -
+/images/stories/ 2 -
+/wp-includes/IXR/ 4 -
+/classwithtostring.php 8 -
+http://mongolianrestaurants.mn:80/xmlrpc.php 1 -
+/wp-admin/js/index.php 6 -
+/warm.PhP7 1 -
+/admin/images/slider/ 2 -
+/ioxi-o.php 8 -
+/wp-includes/ID3/license.txt 1 -
+/wpls.php 1 -
+/ftp.php 1 -
+/wp-includes/PHPMailer/wp-conflg.php 1 -
+/wp-file.php 1 -
+/.gitlab-ci/.env 1 -
+/angelV2.php 1 -
+/.env.backup 1 -
+/dlu.php 1 -
+/config/application.config.php 1 -
+/wp-includes/blocks/about.php 1 -
+/trd.php 1 -
+/bypltspd.php 1 -
+/akcc.php 1 -
+/past.php 2 -
+/admin/fckeditor/editor/filemanager/ 2 -
+/sftp.json 1 -
+/site/wp-includes/wlwmanifest.xml 2 -
+/uploxe.php 1 -
+/wp-admin/css/colors/midnight/ 1 -
+/web/.env 1 -
+/555.php 1 -
+/yasnu.php 1 -
+/wp-admin/network/ 2 -
+/jq.php 1 -
+/Admin/uploads/ 2 -
+/alfa.php 8 -
+/vendor/phpunit/phpunit/src/Util/PHP/ 2 -
+/gelay.php 1 -
+/xzs.php 1 -
+/plugins/kontol/wp-crom.php 1 -
+/.env 7 -
+/2019/wp-includes/wlwmanifest.xml 2 -
+/prod/infos.php 1 -
+/sitemap_index.xml 2 -
+/wp-load.php 2 -
+/wp-2019.php 1 -
+/config/requirements.php 1 -
+/wp-includes/images/media/ 2 -
+/item.php 2 -
+/prevlaravel/sftp-config.json 1 -
+/wp-admin/js/ 1 -
+/wp-includes/Text/Diff/ 3 -
+/browse.php 1 -
+/files/ 3 -
+/wp-trackback.php 2 -
+/tcp.php 1 -
+/wp-includes/Requests/Cookie/ 3 -
+/wp-content/themes/twentytwentyfour/about.php 1 -
+/wp-includes/Text/about.php 1 -
+/wp-includes/blocks/shortcode/index.php 1 -
+/tgrs.php 1 -
+/default.php 1 -
+/wp-22.php 1 -
+/we.php 1 -
+/wp-mail.php 1 -
+/modules/mod_simplefileuploadv1.3/elements/ 2 -
+/php-info.php 1 -
+/fmk.php 1 -
+/elp.php 1 -
+/test.php 2 -
+/images/ 3 -
+/wp-content/wp-conflg.php 6 -
+/wp-includes/SimplePie/Content/Type/ 2 -
+/wp-comments-post.php 1 -
+/wp-content/plugins/elex/elex.php 1 -
+/wp-admin/about.php 1 -
+/filemanager 2 -
+/CLA.php 1 -
+/222.php 1 -
+/gm.php 1 -
+/post.php 1 -
+/env.json 1 -
+/tinny.php 1 -
+/nope.php 1 -
+/filesss.php 1 -
+http://mongolianrestaurants.mn:80/blog/wp-includes/wlwmanifest.xml 1 -
+/wp-links-opml.php 3 -
+/config/default.json 1 -
+/cgi-bin/xmrlpc.php 2 -
+/ws.php 5 -
+/pola.php 1 -
+/hoot.php 1 -
+/zt2.php 1 -
+/admin/ 2 -
+/.local 1 -
+/wp-includes/rest-api/endpoints/ 3 -
+/wp-cron.php 2 -
+/wp-admin/maint/index.php 1 -
+/wp-signup.php 2 -
+/chn.php 1 -
+/wp-admin/js/wp-login.php 1 -
+/admin/uploads/images/ 2 -
+/blog/wp-includes/wlwmanifest.xml 2 -
+/wp-includes/SimplePie/autoload_classmap.php 1 -
+/.docker/config.json 1 -
+/wp-admin/meta/ 2 -
+/wp-includes/html-api/ 3 -
+/ez.php 1 -
+/malo.php 1 -
+/asd67.php 1 -
+/zhidagen.php 1 -
+/wp-content/themes/twentytwentythree/patterns/index.php 1 -
+/wp-includes/fonts/index.php 6 -
+/gebase.php 1 -
+/vv.php 1 -
+/png.php 1 -
+/wp-xrm.php 1 -
+/wp-includes/block-supports/ 3 -
+/prod/.env 1 -
+/wp-sigunq.php 1 -
+/file1.php 1 -
+/gi.php 1 -
+/async.php 1 -
+/2018/wp-includes/wlwmanifest.xml 1 -
+/asasx.php 6 -
+/fe5.php 1 -
+/test/wp-includes/wlwmanifest.xml 2 -
+/volka.php 1 -
+/wp-includes/Text/Diff/Engine/Engine/ 2 -
+/atombil.php 1 -
+/wso.php 1 -
+/sito/wp-includes/wlwmanifest.xml 1 -
+/7wom.php 1 -
+/wp-includes/css/ 3 -
+/k.php 5 -
+/wp-admin/css/colors/blue/atomlib.php 1 -
+/wp-includes/Text/Diff/Engine/ 2 -
+/phpinfo.php 1 -
+/wp-includes/ 3 -
+/cms/wp-includes/wlwmanifest.xml 2 -
+/gmo.php 1 -
+/templates/protostar/index.php 1 -
+/bypass.php 1 -
+http://mongolianrestaurants.mn:80/web/wp-includes/wlwmanifest.xml 1 -
+/local/ 2 -
+/upload/ 2 -
+/.well-known/admin.php 1 -
+/info.php 6 -
+/file5.php 1 -
+/1a.php 2 -
+/wsa.php 5 -
+/config/routes.php 1 -
+/bolt.php 1 -
+/st.php 1 -
+/shell20250630.php 1 -
+/ads.txt 1 -
+/ava.php 1 -
+/about.php 8 -
+/mar.php 5 -
+/application/config/constants.php/ 1 -
+/wp-includes/ID3/ 3 -
+/wp-includes/images/smilies/ 3 -
+/Assets/ 2 -
+/.env.docker.dev 1 -
+/wp-includes/js/codemirror/ 2 -
+/wp-content/themes/twentyfive/include.php 1 -
+/meteor.settings.json 1 -
+/config/session.php 1 -
+/wp/wp-includes/wlwmanifest.xml 2 -
+/v3.php 1 -
+/upfile.php 1 -
+/wp-includes/Requests/Transport/ 2 -
+/wp-admin/includes/ 3 -
+/wp-admin/images/moon.php 5 -
+/admin/editor/ 2 -
+/ot.php 1 -
+/alfanew.php 1 -
+/wp-content/plugins/ninja-forms/ 2 -
+/php/ 2 -
+/laravel/core/.env 1 -
+/nl.php 1 -
+/application/config/mimes.php 1 -
+/law.php 1 -
+/hg.php 1 -
+/yanki.php 1 -
+/ltsxppjj.php 1 -
+/application/config/routes.php 1 -
+/tool/view/phpinfo.view.php 1 -
+/application/config/config.php 1 -
+/C1.php 1 -
+/wp-content/themes/admin.php 1 -
+/index/function.php 1 -
+/ropyx.php 1 -
+/c.php 1 -
+/updates.php 2 -
+/auth.php 1 -
+/aw.php 1 -
+/2020/wp-includes/wlwmanifest.xml 1 -
+/wp-content/themes/ 3 -
+/config/php.ini 1 -
+/config/env.json 1 -
+/ggfi.php 1 -
+/wp-includes/rest-api/search/ 3 -
+/gfile1.php 1 -
+/wp-content/cache/index.php 1 -
+/website/wp-includes/wlwmanifest.xml 1 -
+/filemanager.php 1 -
+/fresh3.php 1 -
+/wp-includes/Requests/Exception/ 2 -
+/wp- 1 -
+/mail.php 1 -
+/test2.php 2 -
+/edit.php 6 -
+/admin-app/.env 1 -
+/pm.php 1 -
+/mds.php 1 -
+/elf.php 1 -
+/class.1.php 1 -
+/llms.txt 1 -
+/dev/phpinfo.php 1 -
+/.well-known/acme-challenge/ 2 -
+/media/wp-includes/wlwmanifest.xml 1 -
+/mm.php 5 -
+/1.php 2 -
+/cool.php 2 -
+/wp-content/ALFA_DATA/alfacgiapi/bypass.php 1 -
+/mr.php 1 -
+/r.php 3 -
+/gifclass.php 1 -
+/appsettings.Test.json 1 -
+/wp-includes/pomo/wp-conflg.php 1 -
+/r4f_1.php 1 -
+/wp-includes/bk/index.php 1 -
+/xex.php 1 -
+/template/ 2 -
+http://mongolianrestaurants.mn:80/2019/wp-includes/wlwmanifest.xml 1 -
+/al.php 2 -
+/app/.env 1 -
+/H.php 1 -
+/byp.php 1 -
+/feed/ 1 -
+/users.php 5 -
+/cs.php 1 -
+/wp-content/autoload_classmap.php 2 -
+/racs3.php 1 -
+/ffile.php 1 -
+/include/ 2 -
+/app/etc/config.php 1 -
+/aspera/faspex/ 1 -
+/wp-admin/function.php 1 -
+/mailer/.env 1 -
+/card.php 2 -
+/.well-known/security.txt 1 -
+/wp-admin/ 8 -
+/ar.php 1 -
+/89.php 1 -
+/tinyfilemanager.php 5 -
+/wp-admin/setup-config.php 5 -
+/wp-includes/sitemaps/autoload_classmap.php 1 -
+/wp-includes/Requests/Exception/HTTP/ 2 -
+/jf1d22.php 1 -
+/jp.php 1 -
+/nbm.php 1 -
+/wp-content/mu-plugins/ 2 -
+/ertg.php 1 -
+/v4.php 1 -
+/ant.php 1 -
+/wp-content/uploads/admin.php 2 -
+/new4.php 2 -
+/wp-xx.php 1 -
+/mass.php 1 -
+/inputs.php 3 -
+/ALFA_DATA/ 2 -
+http://mongolianrestaurants.mn:80/wp/wp-includes/wlwmanifest.xml 1 -
+/wp-includes/js/crop/ 3 -
+/pass.php 1 -
+/zzz.php 1 -
+/cgi-bin/ 4 -
+/config/development.config.php 1 -
+/root.php 3 -
+/installer.php 1 -
+/loli.php 1 -
+/members.php 1 -
+/wp-admin/user/ 2 -
+/wp-includes/fonts/admin.php 5 -
+/wp-includes/sitemaps/ 3 -
+/x.php 1 -
+/ty.php 1 -
+/fox.php 1 -
+/rk2.php 1 -
+/config/acl.config.php 2 -
+/bak.php 1 -
+/xo.php 1 -
+/w3llstore.php 1 -
+/wp-includes/sodium_compat/src/ 3 -
+/wp-content/plugins/ 2 -
+/nxac.php 1 -
+/zcxb.php 1 -
+/5.php 1 -
+/admin/login.php 2 -
+/buy.php 7 -
+/aa17.php 1 -
+/file2.php 7 -
+/license.txt 1 -
+/wp-content/ 3 -
+/v1.php 1 -
+/wp-cliner.php 1 -
+/view.php 1 -
+/wp-admin/js/widgets/ 1 -
+/wp.php 6 -
+/sites/default/files/ 3 -
+/wp-content/uploads/de_fb_uploads/b.php 1 -
+/conf/application.json 1 -
+/wp-good.php 1 -
+/jmfi2.php 1 -
+/vendor/ 2 -
+/autoload_classmap/function.php 6 -
+/laravel-filemanager 2 -
+/wp-includes/SimplePie/ 3 -
+/wp-includes/sitemaps/providers/ 3 -
+/system/ 2 -
+/bb2.php 1 -
+/wp-admin/classwithtostring.php 1 -
+/gn.php 1 -
+/config/config.php 1 -
+/xleet.php 1 -
+/config/autoload/global.php 1 -
+/admin.php 8 -
+/wp-includes/PHPMailer/ 3 -
+/dex.php 1 -
+/.env.development.local 1 -
+/wp-blog-header.php 1 -
+/ioxi.php 1 -
+/adminfuns.php 2 -
+/log.php 1 -
+/images/index.php 2 -
+/wp-includes/js/jcrop/Jcrop.php 1 -
+/mini.php 1 -
+/resp.php 1 -
+/wp-includes/js/ 2 -
+/nij.php 1 -
+/admin/controller/extension/extension/ 3 -
+/parallax/jarallax.js 1 -
+/123.php 1 -
+/wp-content/upgrade/index.php 3 -
+/config/.env 1 -
+/.git/config 2 -
+/local/.env 1 -
+/wp-includes/fonts/about.php 1 -
+/.docker/laravel/app/.env 1 -
+/config/services.php 1 -
+/moo.php 1 -
+/sftp-config.json 1 -
+http://mongolianrestaurants.mn:80/shop/wp-includes/wlwmanifest.xml 1 -
+/goh.php 1 -
+/php.php 1 -
+/shoha.php 1 -
+/wp-content/plugins/deu/ms.php 1 -
+/wp-content/plugins/yanierin/akcc.php 2 -
+/wp-content/plugins/view-ad/ms.php 1 -
+/phpinfo.php3 1 -
+/wp-includes/customize/ 3 -
+/assets/atomlib.php 1 -
+/load.php 1 -
+/yep.php 1 -
+/wp-includes/SimplePie/Cache/ 2 -
+/uploads/ 3 -
+/wp-includes/rest-api/ 4 -
+/wp-includes/ID3/index.php 1 -
+/wp-content/upgrade/ 2 -
+/wp-content/plugins/geu/geu.php 1 -
+/goat.php 5 -
+/application/config/autoload.php 1 -
+/wp-admin/css/ 4 -
+/web/wp-includes/wlwmanifest.xml 2 -
+/wso112233.php 1 -
+/aipoyp.php 1 -
+/doc.php 5 -
+/wp-content/plugins/hanau/akc.php 1 -
+/pinfo.php 1 -
+/wp-includes/Requests/Proxy/ 2 -
+/lv.php 2 -
+/class-config.php 1 -
+/wp-content/admin.php 1 -
+/sitemap.xml 1 -
+/cong.php 8 -
+/wp-includes/theme-compat/ 2 -
+/lfm.php 1 -
+/wp-activate.php 2 -
+/wp-includes/Requests/ 2 -
+/wp-includes/assets/index.php 1 -
+/robots.txt 76 -
+/406.php 1 -
+/chosen.php 7 -
+/xmlrpc.php 3 -
+/asdf.php 2 -
+http://mongolianrestaurants.mn:80/wp-includes/ID3/license.txt 1 -
+/wp-admin/css/colors/ectoplasm/ 3 -
+/config/filesystems.php 1 -
+/wp-content/plugins/view-source/ioxi-o2.php 1 -
+/xmrlpc.php 3 -
+/config/prod.json 1 -
+/upgrade.php 1 -
+/wp-setup.php 5 -
+/wp-content/themes/twentytwentytwo/index.php 1 -
+/fast.php 1 -
+/wp-content/plugins/index-path.php 1 -
+/.docker/.env 1 -
+/wp-includes/Text/Diff/Renderer/ 4 -
+/abcd.php 6 -
+/codicil.php 1 -
+/wp-admin/css/colors/ectoplasm/about.php 1 -
+/config/dev.json 1 -
+/lock360.php 6 -
+/wp-content/themes/pridmag/db.php 1 -
+/aaa.php 1 -
+/awi.php 1 -
+/wp-includes/random_compat/ 2 -
+/news/wp-includes/wlwmanifest.xml 1 -
+/wp-admin/includes/about.php 1 -
+/403.php 2 -
+/bless2.php 1 -
+/mjq.php 1 -
+/wp-content/uploads/ 3 -
+/.ssh/sftp-config.json 1 -
+/application/config/profiler.php 1 -
+/dropdown.php 2 -
+/wp-login.php 4 -
+/.well-knownold/ 2 -
+/install.php 1 -
+/wp-includes/images/crystal/ 2 -
+/wp-content/plugins/hellopress/wp_filemanager.php 2 -
+/zwso.php 2 -
+/reyna.php 1 -
+/wp-includes/style-engine/ 4 -
+/er8.php 1 -
+/abt.php 1 -
+/atomlib.php 7 -
+/wpc.php 1 -
+/orm.php 1 -
+/go.php 2 -
+/MARIJUANA.php 1 -
+/wp-content/themes/themes.php 1 -
+/randkeyword.PhP7 1 -
+/geju.php 1 -
+/wp-content/themes/index.php 1 -
+/wp-includes/Requests/Response/ 3 -
+/xx.php 1 -
+/upload/image/ 2 -
+http://mongolianrestaurants.mn:80/test/wp-includes/wlwmanifest.xml 1 -
+/g.php 1 -
+/.tmb/ 1 -
+/wp-includes/assets/autoload_classmap.php 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 63
+47.254.36.8 14 14 481808 20250927090034
+156.228.110.152 9 9 322398 20250928090921
+144.217.135.252 9 9 322398 20250925021210
+176.116.0.159 4 4 127528 20250930090716
+124.156.134.41 3 3 95646 20250925170228
+205.169.39.128 3 32 2555710 20250924070247
+169.150.203.242 3 3 95646 20250928014941
+185.226.197.69 2 2 63764 20250925222054
+193.162.143.246 2 18 781691 20250923141316
+3.93.51.2 2 33 2776379 20250925221337
+34.123.170.104 2 15 1437941 20250923221941
+145.220.91.19 2 2 63764 20250929073607
+198.199.76.83 2 2 63764 20250930054132
+149.56.150.179 2 25 2353005 20250925021236
+205.169.39.15 2 25 2353005 20250923222056
+3.146.111.124 1 1 31882 20250927041600
+45.141.215.51 1 1 31882 20250928112147
+206.168.34.221 1 2 35238 20250923083224
+37.139.53.159 1 1 31882 20250926040228
+67.205.167.31 1 1 31882 20250929130940
+167.94.138.127 1 2 35238 20250926212400
+46.228.199.158 1 1 31882 20250925194529
+205.169.39.13 1 1 31882 20250925071822
+45.131.155.101 1 1 31882 20250929045706
+34.74.243.195 1 1 31882 20250923231527
+47.82.11.76 0 1 203256 
+47.82.11.181 0 1 99437 
+34.72.176.129 0 2 282789 
+47.82.11.80 0 1 8709 
+87.236.176.57 0 1 3356 
+47.82.11.183 0 1 7945 
+205.169.39.44 0 1 155590 
+47.82.11.195 0 1 14741 
+134.209.96.23 1 1 31882 20250927000040
+47.82.11.128 0 1 335 
+155.207.1.6 1 1 31882 20250925234426
+34.122.147.229 0 6 175664 
+206.189.193.65 1 1 31882 20250929131121
+45.89.70.30 1 1 31882 20250930185001
+92.246.87.104 1 1 31882 20250925001142
+104.197.69.115 0 2 456611 
+47.82.11.97 0 2 15076 
+185.247.137.158 1 1 31882 20250925045736
+191.96.227.248 1 1 31882 20250929071224
+34.207.208.176 1 1 31882 20250924163356
+47.82.11.126 0 1 8709 
+185.193.72.162 1 1 31882 20250925230221
+156.233.95.44 1 1 31882 20250927110509
+64.227.184.171 1 1 795 20250923224003
+47.82.11.94 0 1 7945 
+64.137.58.64 1 1 31882 20250926004104
+185.39.19.34 1 1 31882 20250926042916
+47.82.11.29 0 1 99437 
+93.158.90.67 1 1 31882 20250930054541
+47.82.11.71 0 1 203256 
+155.4.47.54 1 1 31882 20250923100941
+47.82.11.194 0 1 7613 
+185.177.72.31 1 6 124001 20250924230316
+34.239.46.143 1 1 31882 20250928075648
+47.82.11.208 0 1 7613 
+45.156.129.98 1 1 31882 20250924165820
+205.169.39.14 0 1 4623 
+165.227.185.30 1 2 35238 20250929171150
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 9
+20250922 1 1 31882 1
+20250923 10 73 5587498 7
+20250924 6 42 2903688 4
+20250925 24 79 5805840 11
+20250926 6 7 194648 5
+20250927 17 17 577454 4
+20250928 14 14 481808 4
+20250929 6 7 194648 6
+20250930 6 20 875364 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 2
+0s-30s 44
+30s-2mn 2
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 9
+/ 64 2040448 44 37
+/assets/web/assets/mobirise-icons2/mobirise2.ttf 6 151680 0 6
+/page5.html 4 167676 1 0
+/page9.html 3 313830 0 0
+/page4.html 3 129513 0 0
+/members.html 3 36810 0 0
+/course.html 3 40455 0 1
+/research.html 3 33891 0 1
+/.well-known/ 1 795 1 1
+END_SIDER
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 5
+500-1K 3
+0-44 1280
+5K+ 363
+2K-5K 32
+100-500 11
+END_FILESIZE
+
+# Request Time Range - Request Time Frequency
+BEGIN_REQUESTTIME 0
+END_REQUESTTIME
