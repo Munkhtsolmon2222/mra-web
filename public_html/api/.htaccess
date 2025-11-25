@@ -1,0 +1,9 @@
+# Protect API directory
+Options -Indexes
+
+# Prevent direct access to PHP files (optional - remove if you want direct access)
+# <FilesMatch "\.php$">
+#     Order Allow,Deny
+#     Allow from all
+# </FilesMatch>
+

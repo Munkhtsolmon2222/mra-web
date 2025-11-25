@@ -1,0 +1,3 @@
+# Protect admin directory
+Options -Indexes
+
