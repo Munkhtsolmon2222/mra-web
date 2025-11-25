@@ -447,8 +447,8 @@
         @media (max-width: 768px) {
             .participant-card {
                 min-height: auto;
-                height: auto;
-                padding: 0.75rem;
+                height: 115px;
+                padding: 0.25rem;
                 display: grid;
                 grid-template-columns: 110px 1fr auto;
                 grid-template-rows: auto auto;
@@ -685,7 +685,7 @@
                 font-size: 0.875rem;
                 margin-bottom: 0.25rem;
                 min-height: auto;
-                justify-content: flex-start;
+                justify-content: center;
                 text-align: left;
             }
         }
