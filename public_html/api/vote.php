@@ -55,24 +55,48 @@ try {
         $sessionId = session_id();
     }
     
-    // Check if user has already voted in this category
-    // Uses IP + Session combination to allow different devices on same network
-    if (hasVotedInCategory($categoryId, $ip, $sessionId)) {
-        jsonResponse(['success' => false, 'error' => 'You have already voted in this category'], 403);
+    // Check if user has already voted in this category within the last 2 hours
+    // Users can vote again after 2 hours have passed
+    $voteCheck = hasVotedInCategory($categoryId, $ip, $sessionId);
+    
+    if ($voteCheck['has_voted']) {
+        $timeRemaining = $voteCheck['time_remaining'];
+        $hours = floor($timeRemaining / 3600);
+        $minutes = floor(($timeRemaining % 3600) / 60);
+        
+        $message = 'Та энэ ангилалд санал өгсөн байна. ';
+        if ($hours > 0) {
+            $message .= $hours . ' цаг ';
+        }
+        if ($minutes > 0) {
+            $message .= $minutes . ' минут ';
+        }
+        $message .= 'дараа дахин санал өгөх боломжтой.';
+        
+        jsonResponse([
+            'success' => false, 
+            'error' => $message,
+            'can_vote_again_at' => $voteCheck['can_vote_again_at'],
+            'time_remaining' => $timeRemaining
+        ], 403);
     }
     
-    // Rate limiting: Check votes from same IP in last hour
+    // Rate limiting: Check votes from same session in last hour
+    // This prevents abuse while allowing legitimate voting across categories
+    // Since we already have 2-hour cooldown per category, this is just a safety net
     $stmt = $pdo->prepare("
         SELECT COUNT(*) as count 
         FROM votes 
-        WHERE voter_ip = ? 
+        WHERE voter_session = ? 
         AND voted_at > DATE_SUB(NOW(), INTERVAL 1 HOUR)
     ");
-    $stmt->execute([$ip]);
+    $stmt->execute([$sessionId]);
     $recentVotes = $stmt->fetch();
     
-    if ($recentVotes['count'] >= 10) {
-        jsonResponse(['success' => false, 'error' => 'Too many votes. Please try again later.'], 429);
+    // Allow up to 20 votes per hour per session (8 categories + undo/re-vote allowance)
+    // This is more lenient since we already have 2-hour cooldown per category
+    if ($recentVotes['count'] >= 20) {
+        jsonResponse(['success' => false, 'error' => 'Хэт олон санал өгсөн байна. Түр хүлээгээд дахин оролдоно уу.'], 429);
     }
     
     // Record vote
