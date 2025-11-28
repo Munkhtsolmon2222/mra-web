@@ -464,7 +464,7 @@ foreach ($allParticipants as $participant) {
                 form.classList.remove('loading');
             }
         }
-
+//te
         async function deleteParticipant(id) {
             if (!confirm('Та энэ оролцогчийг устгахдаа итгэлтэй байна уу? Ингэснээр уг оролцогчийн бүх санал мөн устах болно.')) {
                 return;

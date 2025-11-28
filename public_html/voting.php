@@ -1759,7 +1759,6 @@
             }
         });
         
-        // Periodic check to re-enable voting after cooldown expires
         function startCooldownChecker() {
             setInterval(() => {
                 const currentTime = Date.now();

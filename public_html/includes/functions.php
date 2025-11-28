@@ -92,9 +92,7 @@ function getParticipantsByCategory($categoryId) {
     return $stmt->fetchAll();
 }
 
-/**
- * Get vote count for participant
- */
+
 function getVoteCount($participantId) {
     $pdo = getDB();
     $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM votes WHERE participant_id = ?");

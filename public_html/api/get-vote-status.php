@@ -40,7 +40,6 @@ try {
     $stmt->execute([$sessionId]);
     $votes = $stmt->fetchAll();
     
-    // Format as category_id => {participant_id, voted_at, can_vote_again_at} map
     $voteMap = [];
     $ip = getClientIP();
     $twoHoursInSeconds = 2 * 60 * 60;
