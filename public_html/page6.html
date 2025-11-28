@@ -1107,6 +1107,61 @@
           display: none;
         }
       }
+
+      /* Countdown Timer */
+      .countdown-timer {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        margin: 2rem auto 0;
+        max-width: 600px;
+      }
+
+      .countdown-timer-label {
+        font-size: 0.875rem;
+        opacity: 0.8;
+        margin-bottom: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .countdown-timer-time {
+        font-size: 1rem;
+        font-weight: 500;
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .countdown-timer-time span {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .countdown-timer.expired {
+        background: rgba(239, 68, 68, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      @media (max-width: 768px) {
+        .countdown-timer {
+          padding: 0.75rem 1rem;
+          margin: 1.5rem auto 0;
+        }
+
+        .countdown-timer-label {
+          font-size: 0.75rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .countdown-timer-time {
+          font-size: 0.875rem;
+          gap: 0.5rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1212,6 +1267,17 @@
             Монголын ресторан зоогийн газрын холбооноос санаачлан салбарын
             шилдэгүүдээ тодруулах шагнал
           </p>
+          <div class="countdown-timer" id="countdownTimer">
+            <div class="countdown-timer-label">Санал өгөх хугацаа дуусахад:</div>
+            <div class="countdown-timer-time" id="countdownTime">
+              <span id="countdownDays">0</span>
+              <span>өдөр</span>
+              <span id="countdownHours">0</span>
+              <span>цаг</span>
+              <span id="countdownMinutes">0</span>
+              <span>мин</span>
+            </div>
+          </div>
           <div
             style="
               margin-top: 3rem;
@@ -1670,6 +1736,62 @@
           }, 800);
         }, 3500);
       }
+
+      // Countdown Timer
+      function initCountdown() {
+        // Voting ends on December 5th, 2025 at 00:00 (midnight) - Mongolia timezone (UTC+8)
+        // Create date in Mongolia timezone
+        const endDate = new Date("2025-12-05T00:00:00+08:00");
+
+        function updateCountdown() {
+          // Check if countdown elements exist
+          const countdownDays = document.getElementById("countdownDays");
+          const countdownHours = document.getElementById("countdownHours");
+          const countdownMinutes = document.getElementById("countdownMinutes");
+          const countdownTime = document.getElementById("countdownTime");
+          const countdownTimer = document.getElementById("countdownTimer");
+
+          if (!countdownDays || !countdownHours || !countdownMinutes) {
+            // Elements not ready yet, try again in a moment
+            return;
+          }
+
+          const now = new Date();
+          const timeLeft = endDate - now;
+
+          if (timeLeft <= 0) {
+            // Voting has ended
+            if (countdownTime) {
+              countdownTime.innerHTML = "<span>Дууссан</span>";
+            }
+            if (countdownTimer) {
+              countdownTimer.classList.add("expired");
+            }
+            return;
+          }
+
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+          );
+
+          countdownDays.textContent = days;
+          countdownHours.textContent = hours.toString().padStart(2, "0");
+          countdownMinutes.textContent = minutes.toString().padStart(2, "0");
+        }
+
+        // Update immediately
+        updateCountdown();
+
+        // Update every second
+        setInterval(updateCountdown, 1000);
+      }
+
+      // Initialize countdown timer when page loads
+      initCountdown();
     </script>
   </body>
 </html>
