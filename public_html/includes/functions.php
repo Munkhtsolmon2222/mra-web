@@ -104,37 +104,87 @@ function getVoteCount($participantId) {
 }
 
 /**
- * Check if user has already voted in category
- * Primary check: Session ID (prevents same device from voting twice, even if IP changes)
+ * Check if user has already voted in category within the last 2 hours
+ * Primary check: Session ID (prevents same device from voting multiple times within 2 hours)
  * Secondary check: IP + Session combination (allows different devices on same network)
+ * 
+ * Returns array with 'has_voted' (boolean) and 'can_vote_again_at' (timestamp or null)
  */
 function hasVotedInCategory($categoryId, $ip, $sessionId) {
     $pdo = getDB();
     
-    // PRIMARY CHECK: Session ID (most important - prevents same device from voting multiple times)
+    // PRIMARY CHECK: Session ID - check if voted within last 2 hours
     // This prevents voting from the same device even if network/IP changes
     if ($sessionId) {
-        $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM votes WHERE category_id = ? AND voter_session = ?");
+        $stmt = $pdo->prepare("
+            SELECT voted_at 
+            FROM votes 
+            WHERE category_id = ? AND voter_session = ? 
+            ORDER BY voted_at DESC 
+            LIMIT 1
+        ");
         $stmt->execute([$categoryId, $sessionId]);
         $result = $stmt->fetch();
-        if ((int)$result['count'] > 0) {
-            return true;
+        
+        if ($result) {
+            $lastVoteTime = strtotime($result['voted_at']);
+            $currentTime = time();
+            $timeDifference = $currentTime - $lastVoteTime;
+            $twoHoursInSeconds = 2 * 60 * 60; // 2 hours
+
+            
+            // If less than 2 hours have passed, user cannot vote yet
+            if ($timeDifference < $twoHoursInSeconds) {
+                return [
+                    'has_voted' => true,
+                    'can_vote_again_at' => date('Y-m-d H:i:s', $lastVoteTime + $twoHoursInSeconds),
+                    'time_remaining' => $twoHoursInSeconds - $timeDifference
+                ];
+            }
+            // If 2+ hours have passed, user can vote again
+            return [
+                'has_voted' => false,
+                'can_vote_again_at' => null,
+                'time_remaining' => 0
+            ];
         }
     }
     
-    // SECONDARY CHECK: IP + Session combination
-    // This helps identify different devices on the same network (same IP, different sessions)
-    // But session check above already handles this, so this is mainly for logging/analytics
+    // SECONDARY CHECK: IP + Session combination (for additional validation)
+    // This is mainly for logging/analytics since session check above handles the main logic
     if ($ip && $ip !== '0.0.0.0' && $ip !== 'UNKNOWN' && $sessionId) {
-        $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM votes WHERE category_id = ? AND voter_ip = ? AND voter_session = ?");
+        $stmt = $pdo->prepare("
+            SELECT voted_at 
+            FROM votes 
+            WHERE category_id = ? AND voter_ip = ? AND voter_session = ? 
+            ORDER BY voted_at DESC 
+            LIMIT 1
+        ");
         $stmt->execute([$categoryId, $ip, $sessionId]);
         $result = $stmt->fetch();
-        if ((int)$result['count'] > 0) {
-            return true;
+        
+        if ($result) {
+            $lastVoteTime = strtotime($result['voted_at']);
+            $currentTime = time();
+            $timeDifference = $currentTime - $lastVoteTime;
+            $twoHoursInSeconds = 2 * 60 * 60;
+            
+            if ($timeDifference < $twoHoursInSeconds) {
+                return [
+                    'has_voted' => true,
+                    'can_vote_again_at' => date('Y-m-d H:i:s', $lastVoteTime + $twoHoursInSeconds),
+                    'time_remaining' => $twoHoursInSeconds - $timeDifference
+                ];
+            }
         }
     }
     
-    return false;
+    // No vote found or 2+ hours have passed
+    return [
+        'has_voted' => false,
+        'can_vote_again_at' => null,
+        'time_remaining' => 0
+    ];
 }
 
 /**
