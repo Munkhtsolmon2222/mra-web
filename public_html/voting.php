@@ -197,6 +197,7 @@
             .cinematic-container {
                 overflow-y: auto;
                 height: 100vh;
+                padding-bottom: 6rem; /* Extra space at bottom for last card */
             }
         }
         
@@ -223,6 +224,11 @@
                 padding-bottom: 3rem !important;
                 opacity: 1 !important;
                 transform: none !important;
+            }
+            
+            /* Add extra padding to last section on mobile */
+            .cinematic-section:last-child {
+                padding-bottom: 8rem !important;
             }
             
             .cinematic-section.active {
@@ -447,16 +453,20 @@
         @media (max-width: 768px) {
             .participant-card {
                 min-height: auto;
-                height: 115px;
-                padding: 0.25rem;
+                height: auto;
+                min-height: 115px;
+                padding: 0.5rem;
                 display: grid;
-                grid-template-columns: 110px 1fr auto;
+                grid-template-columns: 100px 1fr auto;
                 grid-template-rows: auto auto;
-                gap: 0.5rem 0.75rem;
+                gap: 0.5rem 0.5rem;
                 align-items: center;
                 border-radius: 0.75rem;
                 position: relative;
                 overflow: hidden;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
             
             /* Remove white edges by matching border-radius on pseudo-elements */
@@ -469,8 +479,8 @@
             .participant-card > .participant-logo-container {
                 grid-column: 1;
                 grid-row: 1 / 3;
-                width: 110px;
-                height: 110px;
+                width: 100px;
+                height: 100px;
                 margin-bottom: 0;
             }
             
@@ -502,9 +512,9 @@
                 grid-column: 3;
                 grid-row: 1 / 3;
                 width: auto;
-                min-width: 70px;
-                padding: 0.5rem 0.75rem;
-                font-size: 0.7rem;
+                min-width: 65px;
+                padding: 0.5rem 0.5rem;
+                font-size: 0.65rem;
                 white-space: nowrap;
                 align-self: center;
             }
@@ -562,6 +572,13 @@
                 flex-direction: column !important;
                 gap: 0.75rem !important;
                 width: 100% !important;
+                padding: 0 0.75rem;
+                max-width: 100%;
+            }
+            
+            .participant-card {
+                max-width: 100%;
+                box-sizing: border-box;
             }
         }
         
@@ -717,20 +734,22 @@
         
         /* Vote Button - 15% of card space */
         .vote-btn {
-            background: #0a1c44;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.875rem;
-            border: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
             width: 100%;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(10, 28, 68, 0.3);
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
             position: relative;
             overflow: hidden;
             z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .vote-btn::before {
@@ -752,23 +771,48 @@
         }
         
         .vote-btn:hover:not(:disabled) {
-            background: #0d2555;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(10, 28, 68, 0.4);
+            box-shadow: 0 6px 24px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
         }
         
         .vote-btn:disabled {
-            background: #e5e7eb;
+            background: #374151;
             color: #9ca3af;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
+            border-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
+        }
+        
+        .vote-btn.cooldown-disabled {
+            background: #374151;
+            color: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            border-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
         }
         
         .vote-btn.voted {
             background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
             color: white;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .vote-btn.undo-enabled {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .vote-btn.undo-enabled:hover:not(:disabled) {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%);
+            box-shadow: 0 6px 24px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4);
         }
         
         .vote-btn.loading {
@@ -911,6 +955,11 @@
                 flex-shrink: 0;
             }
             
+            /* Add extra padding to last section on mobile to ensure last card is fully visible */
+            .cinematic-section:last-child {
+                padding-bottom: 8rem !important;
+            }
+            
             .cinematic-content {
                 width: 100%;
                 min-height: auto;
@@ -923,6 +972,7 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
+                margin-bottom: 2rem; /* Extra margin at bottom of grid */
             }
         }
         
@@ -967,6 +1017,8 @@
         let participantsByCategory = {};
         let votedCategories = new Set();
         let totalCategories = 0;
+        let existingVotes = {}; // categoryId => participantId
+        let voteCooldowns = {}; // categoryId => {canVoteAgainAt: timestamp, timeRemaining: seconds}
         
         // Load categories and participants
         async function loadData() {
@@ -989,6 +1041,36 @@
                         participantsByCategory[category.id] = participantsData.participants;
                     }
                 }
+                
+                // Load existing vote status
+                const voteStatusResponse = await fetch('api/get-vote-status.php', {
+                    credentials: 'include'
+                });
+                const voteStatusData = await voteStatusResponse.json();
+                
+                if (voteStatusData.success && voteStatusData.votes) {
+                    const currentTime = Date.now();
+                    // Mark categories as voted (only if still within 2-hour cooldown)
+                    Object.keys(voteStatusData.votes).forEach(categoryId => {
+                        const voteInfo = voteStatusData.votes[categoryId];
+                        const canVoteAgainAt = new Date(voteInfo.can_vote_again_at).getTime();
+                        
+                        // Only mark as voted if still in cooldown period
+                        if (currentTime < canVoteAgainAt) {
+                            votedCategories.add(parseInt(categoryId));
+                            // Store which participant was voted for in each category
+                            existingVotes[categoryId] = voteInfo.participant_id;
+                            // Store cooldown information
+                            voteCooldowns[categoryId] = {
+                                canVoteAgainAt: canVoteAgainAt,
+                                timeRemaining: voteInfo.time_remaining
+                            };
+                        }
+                    });
+                }
+                
+                // Start periodic check to re-enable voting after cooldown expires
+                startCooldownChecker();
                 
                 renderVotingPage();
             } catch (error) {
@@ -1013,6 +1095,8 @@
                     loop 
                     muted 
                     playsinline
+                    webkit-playsinline
+                    preload="auto"
                 >
                     <source src="img/hero-ribbon-69d8be316b3dd5adc766c1d5e20380cc.webm" type="video/webm">
                 </video>
@@ -1029,6 +1113,50 @@
                 </div>
             `;
             container.appendChild(heroSection);
+            
+            // Ensure video plays on mobile devices
+            setTimeout(() => {
+                const video = heroSection.querySelector('.hero-video-background');
+                if (video) {
+                    // Ensure all mobile-friendly attributes
+                    video.muted = true;
+                    video.setAttribute('playsinline', '');
+                    video.setAttribute('webkit-playsinline', '');
+                    video.setAttribute('preload', 'auto');
+                    
+                    // Function to attempt playing the video
+                    const attemptPlay = () => {
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                // Autoplay failed, will try on user interaction
+                                console.log('Video autoplay prevented, will play on interaction');
+                            });
+                        }
+                    };
+                    
+                    // Try to play when video is loaded
+                    if (video.readyState >= 2) {
+                        // Video is already loaded
+                        attemptPlay();
+                    } else {
+                        // Wait for video to load
+                        video.addEventListener('loadeddata', attemptPlay, { once: true });
+                        video.addEventListener('canplay', attemptPlay, { once: true });
+                    }
+                    
+                    // Fallback: Play on first user interaction if autoplay fails
+                    const playOnInteraction = () => {
+                        video.play().catch(() => {});
+                        document.removeEventListener('touchstart', playOnInteraction);
+                        document.removeEventListener('click', playOnInteraction);
+                        document.removeEventListener('scroll', playOnInteraction);
+                    };
+                    document.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
+                    document.addEventListener('click', playOnInteraction, { once: true });
+                    document.addEventListener('scroll', playOnInteraction, { once: true, passive: true });
+                }
+            }, 200);
             
             categories.forEach((category, index) => {
                 const section = document.createElement('section');
@@ -1195,13 +1323,19 @@
             const container = document.getElementById(`participants-${categoryId}`);
             if (!container) return;
             
+            const hasVotedInCategory = votedCategories.has(categoryId);
+            const votedParticipantId = existingVotes[categoryId];
+            
             container.innerHTML = participants.map((participant, index) => {
                 const logoUrl = participant.logo_path 
                     ? escapeHtml(participant.logo_path) 
                     : '';
                 
+                const isVotedParticipant = hasVotedInCategory && votedParticipantId === participant.id;
+                const isOtherParticipant = hasVotedInCategory && votedParticipantId !== participant.id;
+                
                 return `
-                    <div class="participant-card" style="animation-delay: ${index * 0.05}s" data-participant-id="${participant.id}">
+                    <div class="participant-card ${isVotedParticipant ? 'voted' : ''}" style="animation-delay: ${index * 0.05}s" data-participant-id="${participant.id}">
                         <div class="vote-checkmark">✓</div>
                         <div class="participant-logo-container">
                             ${participant.logo_path 
@@ -1214,11 +1348,11 @@
                             Санал: <span class="vote-count-number" id="vote-count-${participant.id}">${participant.vote_count}</span>
                         </div>
                         <button 
-                            class="vote-btn" 
-                            onclick="vote(${participant.id}, ${categoryId})"
+                            class="vote-btn ${isVotedParticipant ? 'voted undo-enabled' : ''} ${isOtherParticipant ? 'cooldown-disabled' : ''}" 
+                            onclick="${isVotedParticipant ? `undoVote(${categoryId}, ${participant.id})` : `vote(${participant.id}, ${categoryId})`}"
                             id="vote-btn-${participant.id}"
                         >
-                            Санал өгөх
+                            ${isVotedParticipant ? 'Болих' : 'Санал өгөх'}
                         </button>
                     </div>
                 `;
@@ -1243,13 +1377,60 @@
         }
         
         async function vote(participantId, categoryId) {
-            if (votedCategories.has(categoryId)) {
-                showError('Та энэ ангилалд аль хэдийн санал өгсөн байна.');
-                return;
-            }
+            // Note: We no longer block voting here - the API will check if 2 hours have passed
+            // This allows users to vote again after the cooldown period
             
             const btn = document.getElementById(`vote-btn-${participantId}`);
-            if (!btn || btn.disabled) return;
+            if (!btn) return;
+            
+            // Check if user has already voted in this category (cooldown check)
+            if (votedCategories.has(categoryId) && voteCooldowns[categoryId]) {
+                const cooldown = voteCooldowns[categoryId];
+                const currentTime = Date.now();
+                
+                if (currentTime < cooldown.canVoteAgainAt) {
+                    // Still in cooldown - show error message
+                    const timeRemaining = cooldown.canVoteAgainAt - currentTime;
+                    const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
+                    const minutes = Math.floor((timeRemaining % (60 * 60 * 1000)) / (60 * 1000));
+                    
+                    let message = 'Та энэ ангилалд санал өгсөн байна. ';
+                    if (hours > 0) {
+                        message += hours + ' цаг ';
+                    }
+                    if (minutes > 0) {
+                        message += minutes + ' минут ';
+                    }
+                    message += 'дараа дахин санал өгөх боломжтой.';
+                    
+                    showError(message);
+                    return;
+                } else {
+                    // Cooldown expired - allow voting
+                    votedCategories.delete(categoryId);
+                    delete existingVotes[categoryId];
+                    delete voteCooldowns[categoryId];
+                }
+            }
+            
+            // Check if button is in cooldown-disabled state
+            if (btn.classList.contains('cooldown-disabled')) {
+                // Button is visually disabled due to cooldown - check and show error
+                if (votedCategories.has(categoryId) && voteCooldowns[categoryId]) {
+                    const cooldown = voteCooldowns[categoryId];
+                    const currentTime = Date.now();
+                    
+                    if (currentTime < cooldown.canVoteAgainAt) {
+                        // Still in cooldown - error already shown above, just return
+                        return;
+                    }
+                }
+                // Cooldown expired - remove disabled state
+                btn.classList.remove('cooldown-disabled');
+            }
+            
+            // If button is actually disabled (not just cooldown), don't proceed
+            if (btn.disabled) return;
             
             const card = document.querySelector(`[data-participant-id="${participantId}"]`);
             
@@ -1270,6 +1451,17 @@
                 
                 const result = await response.json();
                 
+                // Check if response was successful (status 200-299) or if it's an error response
+                if (!response.ok) {
+                    // Handle error response (like 403 for cooldown)
+                    btn.disabled = false;
+                    btn.classList.remove('loading');
+                    const errorMsg = result.error || result.message || 'Санал өгөхөд алдаа гарлаа.';
+                    console.log('Vote error:', errorMsg, result);
+                    showError(errorMsg);
+                    return;
+                }
+                
                 if (result.success) {
                     // Animate vote count update
                     const voteCountEl = document.getElementById(`vote-count-${participantId}`);
@@ -1288,26 +1480,39 @@
                         card.classList.add('voted');
                     }
                     
-                    // Update button
+                    // Update button to show undo option
                     btn.classList.remove('loading');
                     btn.classList.add('voted');
-                    btn.textContent = 'Санал өгсөн';
-                    btn.disabled = true;
+                    btn.classList.add('undo-enabled');
+                    btn.textContent = 'Болих';
+                    btn.disabled = false;
+                    btn.onclick = () => undoVote(categoryId, participantId);
                     
                     votedCategories.add(categoryId);
+                    existingVotes[categoryId] = participantId;
                     
-                    // Disable all vote buttons in this category
+                    // Store cooldown information (2 hours from now)
+                    const twoHoursInMs = 2 * 60 * 60 * 1000;
+                    voteCooldowns[categoryId] = {
+                        canVoteAgainAt: Date.now() + twoHoursInMs,
+                        timeRemaining: twoHoursInMs
+                    };
+                    
+                    // Mark other buttons as disabled (but allow clicks to show cooldown error)
                     const categorySection = document.querySelector(`[data-category-id="${categoryId}"]`);
                     if (categorySection) {
                         categorySection.querySelectorAll('.vote-btn').forEach(b => {
                             if (b.id !== `vote-btn-${participantId}`) {
-                                b.disabled = true;
+                                // Don't actually disable - use CSS class instead so clicks still work
+                                // This allows the error message to show when user tries to vote again
+                                b.classList.add('cooldown-disabled');
+                                b.style.pointerEvents = 'auto'; // Ensure clicks still work
                             }
                         });
                     }
                     
                     updateCategoryNav();
-                    showSuccess();
+                    showSuccess('Санал амжилттай бүртгэгдлээ!');
                 } else {
                     btn.disabled = false;
                     btn.classList.remove('loading');
@@ -1320,8 +1525,10 @@
             }
         }
         
-        function showSuccess() {
+        function showSuccess(message) {
             const msg = document.getElementById('successMessage');
+            // Always set the message - use default if none provided
+            msg.textContent = message || 'Санал амжилттай бүртгэгдлээ!';
             msg.classList.add('show');
             setTimeout(() => {
                 msg.classList.remove('show');
@@ -1330,11 +1537,107 @@
         
         function showError(message) {
             const msg = document.getElementById('errorMessage');
+            if (!msg) {
+                console.error('Error message element not found');
+                alert(message); // Fallback to alert if element not found
+                return;
+            }
             msg.textContent = message;
             msg.classList.add('show');
+            console.log('Showing error message:', message);
             setTimeout(() => {
                 msg.classList.remove('show');
-            }, 4000);
+            }, 6000); // Increased to 6 seconds for longer messages
+        }
+        
+        async function undoVote(categoryId, participantId) {
+            const btn = document.getElementById(`vote-btn-${participantId}`);
+            if (!btn) return;
+            
+            const card = document.querySelector(`[data-participant-id="${participantId}"]`);
+            
+            btn.disabled = true;
+            btn.classList.add('loading');
+            
+            try {
+                const response = await fetch('api/undo-vote.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        category_id: categoryId
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Animate vote count update
+                    const voteCountEl = document.getElementById(`vote-count-${result.participant_id}`);
+                    if (voteCountEl) {
+                        voteCountEl.classList.add('animating');
+                        setTimeout(() => {
+                            voteCountEl.textContent = result.vote_count;
+                            setTimeout(() => {
+                                voteCountEl.classList.remove('animating');
+                            }, 400);
+                        }, 200);
+                    }
+                    
+                    // Remove voted state from card
+                    if (card) {
+                        card.classList.remove('voted');
+                    }
+                    
+                    // Reset button to original state
+                    btn.classList.remove('loading');
+                    btn.classList.remove('voted');
+                    btn.classList.remove('undo-enabled');
+                    btn.textContent = 'Санал өгөх';
+                    btn.disabled = false;
+                    btn.onclick = () => vote(result.participant_id, categoryId);
+                    
+                    // Remove from voted categories, existing votes, and cooldowns
+                    votedCategories.delete(categoryId);
+                    delete existingVotes[categoryId];
+                    delete voteCooldowns[categoryId];
+                    
+                    // Re-enable all vote buttons in this category
+                    const categorySection = document.querySelector(`[data-category-id="${categoryId}"]`);
+                    if (categorySection) {
+                        categorySection.querySelectorAll('.vote-btn').forEach(b => {
+                            b.disabled = false;
+                            b.classList.remove('cooldown-disabled');
+                            // Reset any other buttons that might have been in voted state
+                            if (!b.classList.contains('undo-enabled')) {
+                                b.classList.remove('voted');
+                                const btnParticipantId = b.id.replace('vote-btn-', '');
+                                b.onclick = () => vote(parseInt(btnParticipantId), categoryId);
+                            }
+                        });
+                    }
+                    
+                    // Remove voted state from other cards in this category
+                    if (categorySection) {
+                        categorySection.querySelectorAll('.participant-card').forEach(c => {
+                            c.classList.remove('voted');
+                        });
+                    }
+                    
+                    updateCategoryNav();
+                    showSuccess('Санал цуцлагдлаа. Дахин санал өгөх боломжтой.');
+                } else {
+                    btn.disabled = false;
+                    btn.classList.remove('loading');
+                    showError(result.error || 'Санал цуцлах алдаа гарлаа.');
+                }
+            } catch (error) {
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                showError('Алдаа гарлаа. Дахин оролдоно уу.');
+            }
         }
         
         function escapeHtml(text) {
@@ -1455,6 +1758,43 @@
                 }
             }
         });
+        
+        // Periodic check to re-enable voting after cooldown expires
+        function startCooldownChecker() {
+            setInterval(() => {
+                const currentTime = Date.now();
+                
+                Object.keys(voteCooldowns).forEach(categoryId => {
+                    const cooldown = voteCooldowns[categoryId];
+                    
+                    if (currentTime >= cooldown.canVoteAgainAt) {
+                        // Cooldown expired - re-enable voting for this category
+                        votedCategories.delete(parseInt(categoryId));
+                        delete existingVotes[categoryId];
+                        delete voteCooldowns[categoryId];
+                        
+                        // Re-enable all vote buttons in this category
+                        const categorySection = document.querySelector(`[data-category-id="${categoryId}"]`);
+                        if (categorySection) {
+                            categorySection.querySelectorAll('.vote-btn').forEach(b => {
+                                b.disabled = false;
+                                b.classList.remove('voted', 'undo-enabled', 'cooldown-disabled');
+                                const btnParticipantId = b.id.replace('vote-btn-', '');
+                                b.textContent = 'Санал өгөх';
+                                b.onclick = () => vote(parseInt(btnParticipantId), parseInt(categoryId));
+                            });
+                            
+                            // Remove voted state from cards
+                            categorySection.querySelectorAll('.participant-card').forEach(c => {
+                                c.classList.remove('voted');
+                            });
+                        }
+                        
+                        updateCategoryNav();
+                    }
+                });
+            }, 60000); // Check every minute
+        }
         
         // Load data on page load
         loadData();
