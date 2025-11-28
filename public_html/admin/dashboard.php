@@ -208,6 +208,20 @@ foreach ($allParticipants as $participant) {
     </div>
 
     <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Results Export Section -->
+        <div class="card mb-6" style="background: linear-gradient(135deg, #0a1c44 0%, #0d2555 100%); color: white;">
+            <h2 class="text-2xl font-bold mb-4">Санал асуулгын үр дүн</h2>
+            <p class="mb-4 opacity-90">Санал асуулга дууссаны дараа үр дүнг татаж авах боломжтой.</p>
+            <a href="../api/admin/export-results.php" class="btn" style="background: white; color: #0a1c44;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Үр дүнг татаж авах (CSV)
+            </a>
+        </div>
+
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-3xl font-bold text-gray-900">Participants Management</h2>
             <button onclick="openAddModal()" class="btn btn-primary">+ Оролцогч нэмэх</button>
